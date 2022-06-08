@@ -21,7 +21,7 @@ Usage:
 
 Next steps:
   - Enable Swagger for documentation. I've tried adding it this morning but it's blowing up.
-  - Switch from basic manual repo class to actual CRUD repository and actual database. I'd start with H2 to get JPA working and then move to something hosted (RDS or something like that)
+  - Switch from basic manual repo class to actual CRUD repository and actual database. I'd start with H2 to get JPA working and then move to something hosted (RDS or something like that).
   - Improve test coverage. I focused a good bit on wiremock and the interaction with the external inventory service. I think the coverage can be improved for service and more can be added when upgrading the repo.
   - More research on concurrency in Spring - I feel like I'm missing something here based on this requirement - "reactive programming preferred, handle concurrency".
 
@@ -32,4 +32,5 @@ Additional notes
   - Wiremock - I had not used this before this project. After learning about it and putting it to use, I see how much value it could add when developing different services in parallel. I hope my implementation of it is at least decent and I'm certainly open to feedback and advice on how to improve in this area.
   - Wiremock - only used in test cases. I am guessing there was no intent for me to mock the requests in the actual service methods. In case you wish to run the app and have a valid inventory service to hit, I threw this thing together this morning: https://github.com/Nashrew/inventory-api-demo
   - Overall I enjoyed this challenge. I learned a few things (wiremock, spring flux - which I want to read more about) and trying to interpret the requirements was a good thought exercise. I'm sure it isn't perfect and may not even be at all what you were looking for, but I hope we get the opportunity to discuss the project and what may be missing that you were looking for (I feel I'm missing something you were looking for when it comes to concurrency).
-  - Need to do some reading and research around reactive programming
+  - I had lofty thoughts on making one or more branches to do thinks like proper database / JPA usage and dockerization, but didn't have the time and wanted to get this out this morning.
+  - Need to do some reading and research around reactive programming.
