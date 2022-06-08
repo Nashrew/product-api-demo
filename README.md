@@ -25,7 +25,7 @@ Next steps:
   - Improve test coverage. I focused a good bit on wiremock and the interaction with the external inventory service. I think the coverage can be improved for service and more can be added when upgrading the repo.
   - More research on concurrency in Spring - I feel like I'm missing something here based on this requirement - "reactive programming preferred, handle concurrency".
 
-Additional notes
+Additional notes:
   - My approach was based mostly on this statement: "Must provide an endpoint to “book” a product with an inventory id". I took that to mean that we have a separate service which provides inventory details that we can use to book products. I'm not 100% certain that was the intent, in a real grooming/planning situation I'd probably be asking clarifying questions and also would probably have a better understanding of the architecture to start with.
   - I am VERY curious how this project / these requirement might mirror some (if any) of the architecture being used by your team. 
   - I don't like how basic my repository class is, but left it in that state since no DB use was stated in the requirements.
