@@ -22,8 +22,10 @@ Usage:
 Next steps:
   - Enable Swagger for documentation. I've tried adding it this morning but it's blowing up.
   - Switch from basic manual repo class to actual CRUD repository and actual database. I'd start with H2 to get JPA working and then move to something hosted (RDS or something like that).
-  - Improve test coverage. I focused a good bit on wiremock and the interaction with the external inventory service. I think the coverage can be improved for service and more can be added when upgrading the repo.
-  - More research on concurrency in Spring - I feel like I'm missing something here based on this stated requirement - "reactive programming preferred, handle concurrency".
+  - Make the inventory-api-demo an actual API with its own DB, etc. instead of a bad hardcoded thing that was made in 5 minutes
+  - Improve test coverage? I focused a good bit on wiremock and the interaction with the external inventory service. I think the coverage can be improved for service and more can be added when upgrading the repo.
+  - Docker / Terraform if I I'm feeling fancy? Could be a cool opportunity to do some IAC for two different services that need to talk to each other, need to find some sources to read about that. (even with only docker, a shell script to run both services locally might be nice)
+  - More research on concurrency in Spring and/or microservice environments - I feel like I'm missing something here based on this stated requirement - "reactive programming preferred, handle concurrency" - not sure what this is hinting at.
 
 Additional notes:
   - My approach was based mostly on this statement: "Must provide an endpoint to “book” a product with an inventory id". I took that to mean that we have a separate service which provides inventory details that we can use to book products. I'm not 100% certain that was the intent, in a real grooming/planning situation I'd probably be asking clarifying questions and also would probably have a better understanding of the architecture to start with.
