@@ -1,5 +1,5 @@
 # product-api-demo
-Product API Demo App (Interview Project)
+**Product API Demo App** (Interview Project)
 
 Instructions to build and run as a jar (from base directory):
   - $ ./gradlew bootJar
@@ -13,21 +13,21 @@ To run tests (from base directory):
 
 Note - I had to run "$ chmod 755 gradlew" in a fresh ubuntu environment after cloning the repo to avoid permission issues. This was in an AWS C9 environment so YMMV.
 
-Usage:
+**Usage:**
   - /products/ - get all products
   - /products/{product-id}/ - get specific product
   - /products/book/{inventory-id}/ - book (add/create) a new product using the inventory item specified
   - Important note - the booking endpoint calls out to an inventory API. It will not function unless you are running and pointing to a valid service which will return an inventory object. I have provided a barely-skin-and-bones version of that [here](https://github.com/Nashrew/inventory-api-demo) that you can run if you want to test the functionality while actually running the application(s).
 
-Next steps:
-  - Enable Swagger for documentation. I've tried adding it this morning but it's blowing up.
+**Next steps:**
+  - Enable Swagger for documentation. I tried adding it on 6/8 but it's blowing up.
   - Switch from basic manual repo class to actual CRUD repository and actual database. I'd start with H2 to get JPA working and then move to something hosted (RDS or something like that).
   - Make the inventory-api-demo an actual API with its own DB, etc. instead of a bad hardcoded thing that was made in 5 minutes
   - Improve test coverage? I focused a good bit on wiremock and the interaction with the external inventory service. I think the coverage can be improved for service and more can be added when upgrading the repo.
   - Docker / Terraform if I I'm feeling fancy? Could be a cool opportunity to do some IAC for two different services that need to talk to each other, need to find some sources to read about that. (even with only docker, a shell script to run both services locally might be nice)
   - More research on concurrency in Spring and/or microservice environments - I feel like I'm missing something here based on this stated requirement - "reactive programming preferred, handle concurrency" - not sure what this is hinting at.
 
-Additional notes:
+**Additional notes:**
   - My approach was based mostly on this statement: "Must provide an endpoint to “book” a product with an inventory id". I took that to mean that we have a separate service which provides inventory details that we can use to book products. I'm not 100% certain that was the intent, in a real grooming/planning situation I'd probably be asking clarifying questions and also would probably have a better understanding of the architecture to start with.
   - I am very curious how this project / these requirement might mirror some (if any) of the architecture being used by your team. 
   - I don't like how basic my repository class is, but left it in that state since no DB use was stated in the requirements.
