@@ -36,3 +36,27 @@ Additional notes:
   - Overall I enjoyed this challenge. I learned a few things (wiremock, spring flux - which I want to read more about) and trying to interpret the requirements was a good thought exercise. I'm sure it isn't perfect and may not even be at all what you were looking for, but I hope we get the opportunity to discuss the project and what may be missing that you were looking for (I feel I'm missing something you were looking for when it comes to concurrency).
   - I had lofty thoughts on making one or more branches to do thinks like proper database / JPA usage and dockerization, but didn't have the time and wanted to get this out this morning.
   - Need to do some reading and research around reactive programming.
+
+----
+
+**Requirements given:**
+
+** No DB required - use mock services for upstream systems
+
+**General Requirements**
+  - Must be submitted on an online git repository. GitHub, GitLab…etc
+  - Must be written with spring-boot
+  - Must be runnable via a jar or war
+  - Must use wiremock to mock upstream service calls
+  - Must be java (or kotlin), java 11 (reactive programming preferred, handle concurrency)
+  - Should have unit tests
+
+**Functional Requirements**
+  - Must provide an endpoint to retrieve products
+  - Must provide an endpoint to retrieve a single product
+  - Must provide an endpoint to “book” a product with an inventory id
+
+**Products should have the following info:**
+  - Content
+  - Experience details
+  - Inventory
