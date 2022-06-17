@@ -1,5 +1,5 @@
 # product-api-demo
-**Product API Demo App** (Interview Project)
+**Product API Demo App** - This was an interview project which I converting into to a project which I can tinker with / discuss during other technical interviews
 
 Instructions to build and run as a jar (from base directory):
   - $ ./gradlew bootJar
@@ -20,8 +20,9 @@ Note - I had to run "$ chmod 755 gradlew" in a fresh ubuntu environment after cl
   - Important note - the booking endpoint calls out to an inventory API. It will not function unless you are running and pointing to a valid service which will return an inventory object. I have provided a barely-skin-and-bones version of that [here](https://github.com/Nashrew/inventory-api-demo) that you can run if you want to test the functionality while actually running the application(s).
 
 **Next steps:**
-  - Enable Swagger for documentation. I tried adding it on 6/8 but it's blowing up.
   - Switch from basic manual repo class to actual CRUD repository and actual database. I'd start with H2 to get JPA working and then move to something hosted (RDS or something like that).
+  - Improve the 'booking' method. I think I tied it to much to the description of the requirement I was given. I'd like to change it so that 'booking' (creating) a product is simply a post to /products but requires an inventory-id as part of the request body. Could also enable creation of product without inventory lookup - if(content || experienceDetails are null) { lookup with inventory-id } otherwise just create it as supplied in the request body, maybe some apps have the inventory details available to send?
+  - Enable Swagger for documentation. I tried adding it on 6/8 but it's blowing up.
   - Make the inventory-api-demo an actual API with its own DB, etc. instead of a bad hardcoded thing that was made in 5 minutes
   - Improve test coverage? I focused a good bit on wiremock and the interaction with the external inventory service. I think the coverage can be improved for service and more can be added when upgrading the repo.
   - Docker / Terraform if I I'm feeling fancy? Could be a cool opportunity to do some IAC for two different services that need to talk to each other, need to find some sources to read about that. (even with only docker, a shell script to run both services locally might be nice)
