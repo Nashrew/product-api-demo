@@ -22,8 +22,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//	implementation 'org.liquibase:liquibase-core' // TODO maybe implement migrations at some point, just doing JPA for now with a simple table in RDS
+//	implementation "io.springfox:springfox-boot-starter:3.0.0" // TODO - not working, why? Getting an NPE, presumably when swagger is generating because server starts and then blows up
+//	compileOnly "org.springdoc:springdoc-openapi-ui:1.5.9"
+//	compileOnly 'io.springfox:springfox-swagger2:3.0.0'
+//	compileOnly 'io.springfox:springfox-swagger-ui:3.0.0'
 	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'com.h2database:h2'
+//	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation "com.github.tomakehurst:wiremock-jre8:2.33.2"

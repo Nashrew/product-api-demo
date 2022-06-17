@@ -22,7 +22,7 @@ public class InventoryClient {
     public Inventory getInventory(Long id) {
         WebClient webClient = WebClient.create(inventoryUrl);
         return webClient.get()
-                .uri("/inventories/" + id)
+                .uri("/api/inventories/" + id)
                 .retrieve()
                 .onStatus(HttpStatus::is4xxClientError, response -> (Mono.empty()))
                 .bodyToMono(Inventory.class)

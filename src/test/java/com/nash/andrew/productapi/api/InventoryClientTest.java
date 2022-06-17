@@ -23,7 +23,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 @SpringJUnitConfig
-@Tag("UnitTest") // todo what is this doing?
+@Tag("UnitTest")
 public class InventoryClientTest {
 
     public static WireMockServer wireMockRule = new WireMockServer(options().dynamicPort());

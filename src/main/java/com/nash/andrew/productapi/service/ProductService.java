@@ -19,11 +19,11 @@ public class ProductService {
     private InventoryClient inventoryClient;
 
     public List<Product> getProducts() {
-        return productRepository.getProducts();
+        return productRepository.findAll();
     }
 
     public Product getProduct(Long productId) {
-        return productRepository.getProductById(productId);
+        return productRepository.findById(productId).orElse(null);
     }
 
     public Product bookProduct(Long inventoryId) {
