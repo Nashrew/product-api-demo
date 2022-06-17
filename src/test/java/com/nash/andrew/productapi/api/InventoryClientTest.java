@@ -65,7 +65,7 @@ public class InventoryClientTest {
     @Test
     void givenInventoryExists_whenRetrieveInventory_thenSuccess() throws IOException {
 
-        wireMockRule.stubFor(get(urlEqualTo("/inventories/" + DEFAULT_INVENTORY_ID))
+        wireMockRule.stubFor(get(urlEqualTo("/api/inventories/" + DEFAULT_INVENTORY_ID))
                 .willReturn(aResponse()
                         .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                         .withBody(mapper.writeValueAsString(
@@ -81,7 +81,7 @@ public class InventoryClientTest {
         Inventory inventory = inventoryClient.getInventory(DEFAULT_INVENTORY_ID);
 
         wireMockRule.verify(
-                getRequestedFor(urlEqualTo("/inventories/" + DEFAULT_INVENTORY_ID))
+                getRequestedFor(urlEqualTo("/api/inventories/" + DEFAULT_INVENTORY_ID))
         );
         assertThat(inventory, is(notNullValue()));
         assertThat(inventory.getId(), is(DEFAULT_INVENTORY_ID));
@@ -90,7 +90,7 @@ public class InventoryClientTest {
     @Test
     void givenInventoryNotExists_whenRetrieveInventory_thenFail() throws IOException {
 
-        wireMockRule.stubFor(get(urlEqualTo("/inventories/" + DEFAULT_INVENTORY_ID))
+        wireMockRule.stubFor(get(urlEqualTo("/api/inventories/" + DEFAULT_INVENTORY_ID))
                 .willReturn(aResponse()
                         .withStatus(HttpStatus.NOT_FOUND_404))
         );
@@ -98,7 +98,7 @@ public class InventoryClientTest {
         Inventory inventory = inventoryClient.getInventory(DEFAULT_INVENTORY_ID);
 
         wireMockRule.verify(
-                getRequestedFor(urlEqualTo("/inventories/" + DEFAULT_INVENTORY_ID))
+                getRequestedFor(urlEqualTo("/api/inventories/" + DEFAULT_INVENTORY_ID))
         );
         assertThat(inventory, is(nullValue()));
     }

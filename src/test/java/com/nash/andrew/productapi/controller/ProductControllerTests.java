@@ -48,7 +48,7 @@ public class ProductControllerTests {
                                 .build()));
 
         mockMvc.perform(
-                        get("/products")
+                        get("/api/products")
                 )
                 .andDo(print())
                 .andExpect(status().isOk());
@@ -65,7 +65,7 @@ public class ProductControllerTests {
                                 .build());
 
         mockMvc.perform(
-                        get("/products/" + DEFAULT_INVENTORY_ID)
+                        get("/api/products/" + DEFAULT_INVENTORY_ID)
                 )
                 .andDo(print())
                 .andExpect(status().isOk());
@@ -85,7 +85,7 @@ public class ProductControllerTests {
                 });
 
         mockMvc.perform(
-                        post("/products/book/" + DEFAULT_INVENTORY_ID)
+                        post("/api/products/book/" + DEFAULT_INVENTORY_ID)
                 )
                 .andDo(print())
                 .andExpect(status().isOk());
@@ -99,7 +99,7 @@ public class ProductControllerTests {
                 });
 
         mockMvc.perform(
-                        post("/products/book/" + INVALID_INVENTORY_ID)
+                        post("/api/products/book/" + INVALID_INVENTORY_ID)
                 )
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
