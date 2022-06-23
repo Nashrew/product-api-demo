@@ -23,6 +23,7 @@ public class ProductController {
         return productService.getProduct(productId);
     }
 
+    // TODO - Change this to POST "/" and make a Product the @RequestBody, can pull the inventoryId from that (and maybe make it required). Dropping the "/book/" pathing will help the API signature make more sense. 
     @PostMapping("/book/{inventory-id}")
     public Product bookProduct(@PathVariable("inventory-id") Long inventoryId) {
         return productService.bookProduct(inventoryId);
